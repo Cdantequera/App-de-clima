@@ -26,12 +26,12 @@ function App() {
       }
       try {
         setLoading(true);
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=San Miguel de Tucumán&aqi=no&lang=es`);
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=San Miguel de Tucuman&aqi=no&lang=es`);
         if (!response.ok) throw new Error('No se pudieron obtener los datos del clima.');
         const data = await response.json();
         setWeather(data);
-      } catch (err) {
-        setError(err.message);
+      } catch (error) {
+        setError(error.message);
       } finally {
         setLoading(false);
       }
